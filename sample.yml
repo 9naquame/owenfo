@@ -1,0 +1,9 @@
+---
+webserver:
+    host: 192.168.0.45
+    name: Application Server
+    location: Server Room
+    checks:
+        ping:
+            interval: 5000
+            

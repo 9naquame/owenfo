@@ -1,0 +1,27 @@
+{
+  "name": "atongo",
+  "version": "0.1.0",
+  "description": "A tool for monitoring up time through pings, http, sockets.",
+  "main": "atongo.js",
+  "dependencies": {
+    "net-ping": "~1.1.9",
+    "node-yaml-config": "~0.0.2",
+    "yaml": "~0.2.3",
+    "yaml-js": "~0.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ekowabaka/atongo.git"
+  },
+  "dependencies": {
+    "yaml-js": "0.x",
+    "net-ping": "1.x",
+    "express": "3.x"
+  },  
+  "author": "James Ainooson",
+  "license": "MIT"
+}
