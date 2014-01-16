@@ -1,0 +1,23 @@
+<html lang="en">
+    <head>
+        <title>Atongo Monitoring System</title>
+        <link type='text/css' rel='stylesheet' href='css/main.css' />
+        <script src="js/mustache.js" type="text/javascript"></script>
+        <script src="js/masonry.js" type="text/javascript"></script>
+        <script src="js/atongo_web.js" type="text/javascript"></script>
+    </head>
+    <body onload="atongo.init()">
+        <h1>Atongo</h1>
+        <div id="info-cards">
+        </div>
+    </body>
+</html>
+
+<script type="text/html" id="info-card-template">
+    {{#statuses}}
+    <div class="info-card">
+        <h2>{{system}}</h2>
+        <span>{{host}}</span>
+    </div>
+    {{/statuses}}
+</script>

@@ -20,7 +20,9 @@
   "dependencies": {
     "yaml-js": "0.x",
     "net-ping": "1.x",
-    "express": "3.x"
+    "express": "3.x",
+    "ejs" : "0.x",
+    "mustache": "0.x"
   },  
   "author": "James Ainooson",
   "license": "MIT"

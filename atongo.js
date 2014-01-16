@@ -1,7 +1,8 @@
 var yaml = require("yaml-js");
 var fs = require("fs");
 var webui = require("./webui");
-var checks = [];
+var checks = {};
+var statuses = [];
 
 console.log("Atongo Monitor");
 
@@ -18,14 +19,22 @@ fs.readFile(process.argv[2], 'utf8', function(err, data){
     
     for(system in systems)
     {
+        checks[system] = {
+            host : systems[system].host,
+            checks: {}
+        };
+        
         if(typeof systems[system].checks == 'object')
         {
             for(check in systems[system].checks)
             {
+                checks[system]['checks'][check] = {};
+                
                 if(check == 'ping')
                     createPingcheck(
                         {
                             host: systems[system].host,
+                            system: system,
                             interval: systems[system].checks[check].interval,
                             alerts: mergeAlerts(
                                 systems[system].alerts,
@@ -36,8 +45,7 @@ fs.readFile(process.argv[2], 'utf8', function(err, data){
             }
         }
     }
-    
-    webui.start();
+    webui.start(checks);
 });
 
 function mergeAlerts(systemAlerts, checkAlerts)
@@ -61,13 +69,19 @@ function createPingcheck(check)
     var ping = require ("net-ping");
     var session = ping.createSession ();
 
-    setInterval(    
+    checks[check.system].checks.ping.interval = setInterval(    
     function(){
         session.pingHost (check.host, function (error, target) {
             if (error)
-                console.log (target + ": Dead");
+            {
+                checks[check.system].checks.ping.passed = false;
+                checks[check.system].checks.ping.status = 'error';            
+            }
             else
-                console.log (target + ": Alive");
+            {
+                checks[check.system].checks.ping.passed = true;
+                checks[check.system].checks.ping.status = 'ok';
+            }
         });
     }, check.interval);
 }
