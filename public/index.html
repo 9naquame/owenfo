@@ -8,14 +8,14 @@
     </head>
     <body onload="atongo.init()">
         <h1>Atongo</h1>
-        <div id="info-cards">
+        <div class="js-masonry" id="info-cards">
         </div>
     </body>
 </html>
 
 <script type="text/html" id="info-card-template">
     {{#statuses}}
-    <div class="info-card">
+    <div class="info-card status-{{overall_status}}">
         <h2>{{system}}</h2>
         <span>{{host}}</span>
     </div>

@@ -27,3 +27,10 @@ h1{
     font-size:medium;
 }
 
+.status-ok{
+    background-color:#e1fff3
+}
+
+.status-error{
+    background-color:#ffd1d2
+}

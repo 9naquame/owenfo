@@ -7,3 +7,10 @@ webserver:
         ping:
             interval: 5000
             
+dbserver:
+    host: 192.168.0.46
+    name: Database Server
+    location: Server Room
+    checks:
+        ping:
+            interval: 5000
