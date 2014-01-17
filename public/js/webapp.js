@@ -34,7 +34,7 @@ owenfo = {
                     columnWidth: 350
                 });
                 
-                setTimeout("owenfo.update()", 3000);
+                setTimeout("owenfo.update()", 1000);
             }
        };
        xmlhttp.open("GET", "statuses", true);

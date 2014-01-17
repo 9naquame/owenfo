@@ -19,6 +19,9 @@ h1{
     margin-top:10px;
     padding:10px;
     border-radius:3px;
+    
+    background-position:310px 20px;
+    background-repeat: no-repeat;
 }
 
 .info-card h2{
@@ -28,9 +31,11 @@ h1{
 }
 
 .status-ok{
-    background-color:#e1fff3
+    background-color:#e1fff3;
+    background-image:url(../images/ok.png);
 }
 
 .status-error{
-    background-color:#ffd1d2
+    background-color:#ffd1d2;
+    background-image:url(../images/error.png);
 }
