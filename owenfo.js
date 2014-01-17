@@ -4,7 +4,7 @@ var webui = require("./webui");
 var checks = {};
 var statuses = [];
 
-console.log("Atongo Monitor");
+console.log("ɔwɛnfo service monitor");
 
 if(process.argv[2] === undefined) 
 {

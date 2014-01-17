@@ -1,7 +1,7 @@
-atongo = {
+owenfo = {
     init : function ()
     {
-        atongo.update();
+        owenfo.update();
     },
     
     update : function()
@@ -34,7 +34,7 @@ atongo = {
                     columnWidth: 350
                 });
                 
-                setTimeout("atongo.update()", 3000);
+                setTimeout("owenfo.update()", 3000);
             }
        };
        xmlhttp.open("GET", "statuses", true);
